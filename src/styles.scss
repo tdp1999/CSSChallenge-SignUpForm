@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/*Primary
+Red: hsl(0, 100%, 74%) FF7A7AFF
+Green: hsl(154, 59%, 51%) 38CC8CFF
+
+Accent
+Blue: hsl(248, 32%, 49%) 6055A5FF
+Neutral
+Dark Blue: hsl(249, 10%, 26%) 3E3C49FF
+Grayish Blue: hsl(246, 25%, 77%) B9B6D3FF
+*/
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
