@@ -1,9 +1,121 @@
-<div
-  class="flex items-center justify-center h-full min-h-screen p-6 text-white  bg-primaryRed"
->
-  Learn to code by watching others See how experienced developers solve problems
-  in real-time. Watching scripted tutorials is great, but understanding how
-  developers think is invaluable. Try it free 7 days then $20/mo. thereafter
-  First Names Last Name Email Address Password Claim your free trial By clicking
-  the button, you are agreeing to our Terms and Services
+<div class="flex items-center justify-center h-full min-h-screen bg-primaryRed custom-container">
+  <div class="p-6 text-center text-white lg:flex lg:items-center lg:text-left custom-inner">
+    <div class="mb-8 basis-1/2">
+      <h2 class="mb-6 text-2xl font-bold lg:text-4xl">
+        Learn to code by <br />
+        watching others
+      </h2>
+      <div class="text-sm">
+        See how experienced developers solve problems in real-time. <br />
+        Watching scripted tutorials is great, but understanding how developers think is invaluable.
+      </div>
+    </div>
+    <div class="lg:ml-8 basis-1/2">
+      <button
+        class="
+          px-10
+          mb-6
+          text-sm
+          leading-6
+          custom-section
+          lg:hover:bg-accentBlueHover
+          bg-accentBlue
+        "
+      >
+        <span class="font-bold">Try it free</span> 7 days then <br class="lg:hidden" />
+        $20/mo. thereafter
+      </button>
+      <div class="w-full p-6 bg-white rounded-lg shadow-tryIt">
+        <form class="text-black" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="relative mb-4">
+            <input
+              id="firstName"
+              type="text"
+              placeholder="First Names"
+              formControlName="firstName"
+            />
+            <img
+              *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+              src="/assets/icon-error.svg"
+              alt="icon-error"
+              class="absolute top-0 translate-y-1/2 right-4"
+            />
+            <small *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+              >First Name cannot be empty!</small
+            >
+          </div>
+          <div class="relative mb-4">
+            <input id="lastname" type="text" placeholder="Last Name" formControlName="lastName" />
+
+            <img
+              *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+              src="/assets/icon-error.svg"
+              alt="icon-error"
+              class="absolute top-0 translate-y-1/2 right-4"
+            />
+            <small *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+              >Last Name cannot be empty!</small
+            >
+          </div>
+          <div class="relative mb-4">
+            <input id="email" type="email" placeholder="Email Address" formControlName="email" />
+
+            <img
+              *ngIf="email.invalid && (email.dirty || email.touched)"
+              src="/assets/icon-error.svg"
+              alt="icon-error"
+              class="absolute top-0 translate-y-1/2 right-4"
+            />
+            <small *ngIf="email.invalid && (email.dirty || email.touched)"
+              ><span *ngIf="email.errors?.['required']">Email cannot be empty!</span>
+              <span *ngIf="email.errors?.['pattern']">Looks like this is not an email</span>
+            </small>
+          </div>
+          <div class="relative mb-4">
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+            />
+
+            <img
+              *ngIf="password.invalid && (password.dirty || password.touched)"
+              src="/assets/icon-error.svg"
+              alt="icon-error"
+              class="absolute top-0 translate-y-1/2 right-4"
+            />
+            <small *ngIf="password.invalid && (password.dirty || password.touched)"
+              >Password cannot be empty!</small
+            >
+          </div>
+          <button
+            type="submit"
+            [disabled]="!form.valid"
+            class="
+              w-full
+              py-3
+              mb-6
+              font-medium
+              text-white
+              uppercase
+              rounded-md
+              disabled:cursor-not-allowed disabled:bg-slate-500
+              bg-primaryGreen
+              lg:hover:bg-primaryGreenHover
+              shadow-tryItDes
+            "
+          >
+            Claim your free trial
+          </button>
+          <div class="text-center custom-disclaimer lg:pb-4 text-neutralGrayBlue">
+            By clicking the button, you are agreeing to our
+            <a href="#" class="inline-block font-bold text-primaryRed lg:hover:text-primaryRedHover"
+              >Terms and Services</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

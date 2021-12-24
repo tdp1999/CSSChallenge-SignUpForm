@@ -1,10 +1,25 @@
-/*Primary
-Red: hsl(0, 100%, 74%) FF7A7AFF
-Green: hsl(154, 59%, 51%) 38CC8CFF
+input {
+  @apply w-full p-3 lg:px-6 text-sm font-semibold rounded-md
+  border-[1px] border-gray-200 focus:border-gray-400 focus:outline-none;
 
-Accent
-Blue: hsl(248, 32%, 49%) 6055A5FF
-Neutral
-Dark Blue: hsl(249, 10%, 26%) 3E3C49FF
-Grayish Blue: hsl(246, 25%, 77%) B9B6D3FF
-*/
+  &.ng-invalid.ng-dirty,
+  &.ng-invalid.ng-touched {
+    @apply border-red-500 border-[1px] placeholder:text-primaryRed;
+  }
+}
+small {
+  @apply block font-semibold text-right text-primaryRed italic text-[10px] mt-2;
+}
+.custom-container {
+  @apply bg-[url('/assets/bg-intro-mobile.png')] lg:bg-[url('/assets/bg-intro-desktop.png')];
+}
+.custom-inner {
+  @apply lg:max-w-[1100px];
+}
+.custom-section {
+  @apply shadow-tryIt rounded-lg w-full py-4;
+}
+
+.custom-disclaimer {
+  @apply text-[9px];
+}
