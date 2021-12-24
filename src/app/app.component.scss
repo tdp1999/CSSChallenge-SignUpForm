@@ -11,7 +11,7 @@ small {
   @apply block font-semibold text-right text-primaryRed italic text-[10px] mt-2;
 }
 .custom-container {
-  @apply bg-[url('/assets/bg-intro-mobile.png')] lg:bg-[url('/assets/bg-intro-desktop.png')];
+  @apply bg-[url('../assets/bg-intro-mobile.png')] lg:bg-[url('../assets/bg-intro-desktop.png')];
 }
 .custom-inner {
   @apply lg:max-w-[1100px];
